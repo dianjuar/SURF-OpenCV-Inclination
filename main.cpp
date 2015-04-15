@@ -15,9 +15,9 @@ using namespace std;
 void getComponents(const Mat normalised_homography, float &theta );
 void drawInclination(float theta);
 
-int main()
+int main(int argc, char* argv[])
 {
-    Mat object = imread( "2.jpg", CV_LOAD_IMAGE_GRAYSCALE );
+    Mat object = imread( argc==1? "2.jpg":argv[1], CV_LOAD_IMAGE_GRAYSCALE );
 
     if( !object.data )
     {
